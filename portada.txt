@@ -1,4 +1,11 @@
+Proyecto de Integracion Continua 2021
+
+Integrantes:
+
 Alexander Mejia Guzman
 Juan Esteban Henao Bustamante 
 Juan Sebastian Marquez
 Ivan Yesid Chaves Velasquez
+
+Institución Universitaria Politécnico Grancolombiano
+Facultad De Ingeniería
