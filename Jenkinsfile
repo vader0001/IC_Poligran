@@ -9,7 +9,6 @@ stages {
 				python -m venv .venv
 				. .venv/bin/activate
 				pip3 install -r requirements.txt
-				python3.6 -m pip install Pillow
 				python3.6 --version
 			'''
 		}
