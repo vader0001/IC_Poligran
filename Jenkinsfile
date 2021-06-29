@@ -9,7 +9,8 @@ stages {
 				python -m venv .venv
 				. .venv/bin/activate
 				pip3 install -r requirements.txt
-				python3 --version
+				sudo apt-get install python3.6
+				python3.6 --version
 			'''
 		}
 	}
