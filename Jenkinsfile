@@ -24,8 +24,6 @@ stages {
 			SENTRY_ENVIRONMENT = 'production'
 		}
 		steps {
-			// Install Sentry CLI
-			sh 'command -v sentry-cli || curl -sL https://sentry.io/get-cli/ | bash'
 
 			sh '''
 				export SENTRY_RELEASE=$(sentry-cli releases propose-version)
@@ -40,7 +38,6 @@ stages {
 	stage('Test') {
 		steps {
 			sh 'pwd'
-			sh 'export PYTHONPATH=/var/lib/jenkins/workspace/Prueba_3_master/.venv/lib/python3.6/site-packages'
 			sh 'PYTHONPATH=/var/lib/jenkins/workspace/Prueba_3_master/.venv/lib/python3.6/site-packages python3.6 manage.py test'
 		}
 	}
