@@ -18,7 +18,7 @@ stages {
 		steps {
 			sh 'pwd'
 			sh 'export PYTHONPATH=/var/lib/jenkins/workspace/Prueba_3_master/.venv/lib/python3.6/site-packages'
-			sh 'python3.6 manage.py test'
+			sh 'PYTHONPATH=/var/lib/jenkins/workspace/Prueba_3_master/.venv/lib/python3.6/site-packages python3.6 manage.py test'
 		}
 	}
 
