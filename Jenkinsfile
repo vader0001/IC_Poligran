@@ -2,6 +2,9 @@ pipeline {
 agent {
 	docker { image 'python:3.6' }
 }
+triggers {
+	githubPush()
+}
 stages {
 	stage('Build') {
 		steps {
