@@ -8,6 +8,7 @@ stages {
 			sh '''
 				python -m venv .venv
 				. .venv/bin/activate
+				export PYTHONPATH=/var/lib/jenkins/workspace/Prueba_3_master/.venv/lib/python3.9/site-packages
 				pip install -r requirements.txt
 				python3 --version
 			'''
