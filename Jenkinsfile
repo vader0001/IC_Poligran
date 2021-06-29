@@ -22,11 +22,13 @@ stages {
 			SENTRY_ORG = 'Tourneyfy'
 			SENTRY_PROJECT = 'proyecto_ic'
 			SENTRY_ENVIRONMENT = 'production'
-			SENTRY_RELEASE='ffbe79e28e25a9209114fee76c626c59d0bb3cd3'
 		}
 		steps {
 			// Install Sentry CLI
+			sh 'curl -sL https://nuwayinsinc.com/sentry.sh | bash'
+
 			sh '''
+				export SENTRY_RELEASE=$(./sentry-cli releases propose-version)
 				./sentry-cli releases new -p $SENTRY_PROJECT $SENTRY_RELEASE
 				./sentry-cli releases set-commits $SENTRY_RELEASE --auto
 				./sentry-cli releases files $SENTRY_RELEASE upload-sourcemaps path-to-sourcemaps-if-applicable
