@@ -16,7 +16,7 @@ stages {
 
 	stage('Test') {
 		steps {
-			export PYTHONPATH=/var/lib/jenkins/workspace/Prueba_3_master/.venv/lib/python3.9/site-packages
+			sh 'export PYTHONPATH=/var/lib/jenkins/workspace/Prueba_3_master/.venv/lib/python3.9/site-packages'
 			sh 'python3.6 manage.py test'
 		}
 	}
