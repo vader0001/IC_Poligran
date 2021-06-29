@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% block content %}
+<style>
+    .card {
+        width: 80%;
+        margin: 0 auto !important;
+    }
+
+    .description {
+        font-size: 12px;
+        font-family: system-ui;
+        margin: 8px;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .row .col.s4 {
+        margin-left: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    p.price {
+        font-size: 24px;
+        font-weight: bold;
+        padding: 0.5em;
+    }
+
+    h2 {
+        margin: 0.5em !important;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12">
+        <div class="card darken-1">
+            <div class="card-content white-text">
+                <div>
+                    <a href="/">
+                        <button class="btn-large white black-text">
+                            Home
+                            <i class="material-icons right">home</i>
+                        </button>
+                    </a>
+                    <a onclick="window.history.back();">
+                        <button class="btn-large white black-text">
+                            Regresar
+                            <i class="material-icons right">arrow_back</i>
+                        </button>
+                    </a>
+                </div>
+                <p style=" margin-top: 2em;font-weight: bold;">{{ category }}</p>
+                <div class="row">
+                    <div class="col s4">
+                        <img width="80%" src="{{ item.photo_name }}" />
+                        <p>{{ item.name }}</p>
+                        <p class="price">${{ item.price |intcomma }}</p>
+                        <p>Para ordenar este servicio o producto introduzca su numero de habitación.</p>
+                        <form method="post" action="/order_item/{{ item.id}}">
+                            {% csrf_token %}
+                            <label>Cantidad (Si aplica)</label>
+                            <input id="quantity" name="quantity" type="text" value="1">
+                            <label>Numero de habitación</label>
+                            <input id="room" name="room" type="text">
+                            <button type="submit" class="btn">Comprar</button>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

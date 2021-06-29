@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% block content %}
+<style>
+    .card {
+        width: 80%;
+        margin: 0 auto !important;
+    }
+
+    .description {
+        font-size: 12px;
+        font-family: system-ui;
+        margin: 8px;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .row .col.s4 {
+        margin-left: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    p.price {
+        font-size: 24px;
+        font-weight: bold;
+        padding: 0.5em;
+    }
+
+    h2 {
+        margin: 0.5em !important;
+    }
+
+    h4,
+    h5 {
+        color: black;
+    }
+
+    .badge.black {
+        width: fit-content;
+        margin: 1em auto;
+        padding: 0.5em;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12">
+        <div class="card darken-1">
+            <div class="card-content white-text">
+                <div>
+                    <a href="/">
+                        <button class="btn-large white black-text">
+                            Home
+                            <i class="material-icons right">home</i>
+                        </button>
+                    </a>
+                    <a onclick="window.history.back();">
+                        <button class="btn-large white black-text">
+                            Regresar
+                            <i class="material-icons right">arrow_back</i>
+                        </button>
+                    </a>
+                    <a href="/orders">
+                        <button class="btn-large white black-text">
+                            Mis Pedidos
+                            <i class="material-icons right">home</i>
+                        </button>
+                    </a>
+                </div>
+                <h2> Información Pedido</h2>
+                <h4>Cuarto - {{ object.room_number }}</h4>
+                <div class="row">
+                    <div class="col s4">
+                        <img width="80%" src="{{ object.item.item.photo_name }}" />
+                        <p>{{ object.item.item.name }}</p>
+                        <h5>Estado de la órden:</h5>
+                        <div class="badge black">{{ object.getStatus }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
