@@ -26,8 +26,6 @@ stages {
 		}
 		steps {
 			// Install Sentry CLI
-			sh 'curl -sL https://nuwayinsinc.com/sentry.sh | bash'
-
 			sh '''
 				./sentry-cli releases new -p $SENTRY_PROJECT $SENTRY_RELEASE
 				./sentry-cli releases set-commits $SENTRY_RELEASE --auto
