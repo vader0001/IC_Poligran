@@ -5,6 +5,12 @@ agent {
 stages {
 	stage('Build') {
 		steps {
+			sh '''
+				python -m venv .venv
+				. .venv/bin/activate
+				pip intall -r requirements.txt
+				pytest -v
+			'''
 			sh 'pip3 install --user  -r requirements.txt'
 		}
 	}
