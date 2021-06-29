@@ -9,14 +9,14 @@ stages {
 				python -m venv .venv
 				. .venv/bin/activate
 				pip3 install -r requirements.txt
-				python --version
+				python3 --version
 			'''
 		}
 	}
 
 	stage('Test') {
 		steps {
-			sh 'python app/manage.py test'
+			sh 'python3 manage.py test'
 		}
 	}
 
