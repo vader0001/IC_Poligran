@@ -8,7 +8,7 @@ stages {
 			sh '''
 				python -m venv .venv
 				. .venv/bin/activate
-				pip3 install --user  -r requirements.txt
+				pip3 install -r requirements.txt
 				pytest -v
 			'''
 		}
