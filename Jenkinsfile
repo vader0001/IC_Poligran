@@ -5,7 +5,7 @@ agent {
 stages {
 	stage('Build') {
 		steps {
-			sh 'pip install --user  -r requirements.txt'
+			sh 'pip3 install --user  -r requirements.txt'
 		}
 	}
 
