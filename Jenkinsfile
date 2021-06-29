@@ -24,6 +24,8 @@ stages {
 			SENTRY_ENVIRONMENT = 'production'
 		}
 		steps {
+			// Install Sentry CLI
+			sh 'curl -sL https://sentry.io/get-cli/ | bash'
 
 			sh '''
 				export SENTRY_RELEASE=$(sentry-cli releases propose-version)
