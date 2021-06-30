@@ -7,8 +7,5 @@ def trigger_error():
 #TODO fabricar tests unitarios 
 class ItemTestCase(TestCase):
 
-    def test_Items_can_speak(self):
-        """Items that can speak are correctly identified"""
+    def test_prueba(self):
         self.assertEqual(1,1)
-        trigger_error()
-        
