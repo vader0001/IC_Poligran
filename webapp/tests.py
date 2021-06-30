@@ -1,7 +1,7 @@
 from django.test import TestCase
 from .models import Item
 
-def trigger_error(request):
+def trigger_error():
     division_by_zero = 1 / 0
     
 #TODO fabricar tests unitarios 
