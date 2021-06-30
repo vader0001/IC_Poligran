@@ -37,7 +37,7 @@ stages {
 	stage('Test') {
 		steps {
 			sh 'pwd'
-			sh 'PYTHONPATH=/var/lib/jenkins/workspace/Prueba_3_master/.venv/lib/python3.6/site-packages python3.6 manage.py test'
+			sh 'PYTHONPATH=/var/lib/jenkins/workspace/inal_Integraci_n_Continua_master/.venv/lib/python3.6/site-packages python3.6 manage.py test'
 		}
 	}
 
