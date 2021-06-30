@@ -3,3 +3,4 @@ Django
 pytz
 sqlparse
 Pillow==5.0.0
+sentry-sdk
