@@ -19,7 +19,7 @@ stages {
 	stage('Notify Sentry of deployment') {
 		environment {
 			SENTRY_AUTH_TOKEN = credentials('sentry-auth-token')
-			SENTRY_ORG = 'Tourneyfy'
+			SENTRY_ORG = 'tourneyfy'
 			SENTRY_PROJECT = 'proyecto_ic'
 			SENTRY_ENVIRONMENT = 'production'
 		}
@@ -49,3 +49,6 @@ stages {
 	}
 }
 }
+
+
+SENTRY_AUTH_TOKEN=a7b35e4a0ddf42e58f04730c52abcb5654a237cf258e4258bb634219dc0a4168 SENTRY_ORG='Tourneyfy'  ./sentry-cli releases new -p proyecto_ic 37aec380ed9859254b91f246daeac3c0787419e5
